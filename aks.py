@@ -60,9 +60,11 @@ def is_perfect_power(n):
     >>> is_perfect_power(243)
     1
     """
-    # This part relies on the fact that x^(log_x(y)) = y, where x and y are positive integers.
-    # Notice that since the smallest possible value of a is 2, the smallest possible value of
-    # b is log_2(n) because 2^log_2(n) = n. Therefore, we only need to check values of b from 2 to log_2(n)
+    # This part relies on the fact that a^(log_a(b)) = b, where a and b are positive integers.
+    # Notice that since the smallest possible value of a is 2, the largestt possible value of
+    # b is log_2(n) because 2^log_2(n) = n. Therefore, we only need to check values of b from 2 to log_2(n),
+    # and if take apply log_b to both sides of the equation n = a^b, we get a = n^(1/b), and so for each
+    # value of b, we check if n^(1/b) is an integer. If it is, then n is a perfect power.
 
     if n == 1: return 1
 
