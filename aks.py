@@ -1,4 +1,5 @@
 import sys
+from math import log2, floor
 
 def main(n):
     """
@@ -7,6 +8,8 @@ def main(n):
     either PRIME or COMPOSITE.
     """
     # Step 1:
+    if is_perfect_power(n):
+        return "COMPOSITE"
 
     # Step 2:
 
@@ -35,8 +38,39 @@ def is_perfect_power(n):
     where a is a positive integer and b is a positive integer greater than 1. 
     If that is the case, it will return 1 (meaning True). 
     Otherwise, it will return 0 (meaning False).
+
+    >>> is_perfect_power(1)
+    1
+    >>> is_perfect_power(2)
+    0
+    >>> is_perfect_power(4)
+    1
+    >>> is_perfect_power(8)
+    1
+    >>> is_perfect_power(9)
+    1
+    >>> is_perfect_power(64)
+    1
+    >>> is_perfect_power(81)
+    1
+    >>> is_perfect_power(100)
+    1
+    >>> is_perfect_power(199)
+    0
+    >>> is_perfect_power(243)
+    1
     """
-    pass
+    # This part relies on the fact that x^(log_x(y)) = y, where x and y are positive integers.
+    # Notice that since the smallest possible value of a is 2, the smallest possible value of
+    # b is log_2(n) because 2^log_2(n) = n. Therefore, we only need to check values of b from 2 to log_2(n)
+
+    if n == 1: return 1
+
+    for b in range(2, floor(log2(n) + 1)):
+        a = n ** (1 / b) # We get this by taking the bth on both sides of the equation n = a^b and solving for a
+        if a.is_integer():
+            return 1
+    return 0
 
 def get_smallest_r(n):
     """
@@ -45,4 +79,7 @@ def get_smallest_r(n):
     pass
 
 if __name__ == '__main__':
-    main(sys.argv[1]) # Will output PRIME or COMPOSITE
+    import doctest
+    doctest.testmod() # For testing purposes (make sure to comment out when submitting)
+
+    # main(sys.argv[1]) # Will output PRIME or COMPOSITE
