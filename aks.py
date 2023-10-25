@@ -1,5 +1,5 @@
 import sys
-from math import log2, floor
+from math import log2, floor, gcd
 
 def main(n):
     """
@@ -16,13 +16,15 @@ def main(n):
     print("r is: ", r)
 
     # Step 3:
+    if not isall_a_coprime_to_n(r, n):
+        return "COMPOSITE"
 
     # Step 4:
 
     # Step 5:
 
     # Step 6:
-    pass
+    
 
 ########################################################################################
 
@@ -100,6 +102,23 @@ def get_smallest_r(n):
     assert r <= r_max
     return r
 
+def isall_a_coprime_to_n(r, n):
+    """
+    This function checks if for all a such that 1 < a <= r, gcd(a, n) = 1.
+    If this is the case, it will return 1, otherwise it will return 0.
+
+    a is a value in [2, min(r, n)], see comments below for explanation.
+    """
+    # Remember that the minimum value of r is 2, however, we don't know which of r and n is smaller,
+    # and so for the values of a, we will check all values from 2 to min(r, n), and we check if a is
+    # co-prime to n.
+
+    # Note: Maybe could use any() function here instead of for loop?
+
+    for a in range(2, min(r, n)):
+        if 1 < gcd(a, n) < n: # We found an a such that 1 < (a, n) < n
+            return 0
+    return 1
 
 if __name__ == '__main__':
     # import doctest
