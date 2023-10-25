@@ -12,6 +12,8 @@ def main(n):
         return "COMPOSITE"
 
     # Step 2:
+    r = get_smallest_r(n)
+    print("r is: ", r)
 
     # Step 3:
 
@@ -78,10 +80,29 @@ def get_smallest_r(n):
     """
     This function computes the smallest r such that the order of n mod r is greater than log^2(n).
     """
-    pass
+    # Recall from Lemma 3 in the paper that the max value of r is log_2(n)^5.
+    r_max = log2(n) ** 5
+
+    # We want order of n mod r to be greater than log^2(n), so the max value of the exponent of r is log^2(n).
+    e_max = log2(n) ** 2
+    exists_next_r = 1
+    r = 1
+    # Want to try out all values of r from 1 to r_max until we find one that works
+    while exists_next_r:
+        r += 1
+        exists_next_r = 0
+        e = 0
+        while e < e_max and not exists_next_r:
+            e += 1
+            result = n ** e % r
+            if result == 0 or result == 1:
+                exists_next_r = 1
+    assert r <= r_max
+    return r
+
 
 if __name__ == '__main__':
-    import doctest
-    doctest.testmod() # For testing purposes (make sure to comment out when submitting)
+    # import doctest
+    # doctest.testmod() # For testing purposes (make sure to comment out when submitting)
 
-    # main(sys.argv[1]) # Will output PRIME or COMPOSITE
+    main(int(sys.argv[1])) # Will output PRIME or COMPOSITE
