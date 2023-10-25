@@ -20,6 +20,9 @@ def main(n):
         return "COMPOSITE"
 
     # Step 4:
+    print("r is: ", r, " and n is: ", n)
+    if n <= r:
+        return "PRIME"
 
     # Step 5:
 
@@ -124,4 +127,4 @@ if __name__ == '__main__':
     # import doctest
     # doctest.testmod() # For testing purposes (make sure to comment out when submitting)
 
-    main(int(sys.argv[1])) # Will output PRIME or COMPOSITE
+    print(main(int(sys.argv[1]))) # Will output PRIME or COMPOSITE
