@@ -25,6 +25,8 @@ def main(n):
         return "PRIME"
 
     # Step 5:
+    # For this, we will need to multiply polynomials, so maybe numpy might help for that
+    # We will also need to implement a helper function for modular exponentiation of polynomials
 
     # Step 6:
     
