@@ -27,7 +27,8 @@ def main(n):
     # Step 5:
     # For this, we will need to multiply polynomials, so maybe numpy might help for that
     # We will also need to implement a helper function for modular exponentiation of polynomials
-
+    for a in range(1, floor(sqrt(euler_totient(r)) * log2(n))):
+        pass
     # Step 6:
     
 
