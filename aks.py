@@ -1,5 +1,6 @@
 import sys
 from math import log2, floor, gcd, sqrt
+import array as arr
 
 def main(n):
     """
@@ -27,6 +28,7 @@ def main(n):
     # Step 5:
     # For this, we will need to multiply polynomials, so maybe numpy might help for that
     # We will also need to implement a helper function for modular exponentiation of polynomials
+    X = arr.array('l', [],) # This array represents the polynomial X
     for a in range(1, floor(sqrt(euler_totient(r)) * log2(n))):
         pass
     # Step 6:
@@ -130,13 +132,13 @@ def isall_a_coprime_to_n(r, n):
             return 0
     return 1
 
-def multiply_two_polynomials():
+def multiply_two_polynomials(y, z, n, r):
     """
     This function multiplies two polynomials together.
     """
     pass
 
-def mod_exponentiation_poly():
+def mod_exponentiation_poly(base, exponent, r):
     """
     This function computes modular exponentiation of polynomials.
     """
