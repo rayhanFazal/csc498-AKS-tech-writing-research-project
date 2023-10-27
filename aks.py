@@ -39,7 +39,11 @@ def euler_totient(r):
     This function computes Euler's totient function phi(n), which is the number of positive
     integers less than or equal to n that are relatively prime (or co-prime) to n.
     """
-    pass
+    count = 0
+    for i in range(1, r + 1):
+        if gcd(i, r) == 1:
+            count += 1
+    return count
 
 def is_perfect_power(n):
     """
