@@ -1,5 +1,5 @@
 import sys
-from math import log2, floor, gcd
+from math import log2, floor, gcd, sqrt
 
 def main(n):
     """
@@ -129,6 +129,18 @@ def isall_a_coprime_to_n(r, n):
         if 1 < gcd(a, n) < n: # We found an a such that 1 < (a, n) < n
             return 0
     return 1
+
+def multiply_two_polynomials():
+    """
+    This function multiplies two polynomials together.
+    """
+    pass
+
+def mod_exponentiation_poly():
+    """
+    This function computes modular exponentiation of polynomials.
+    """
+    pass
 
 if __name__ == '__main__':
     # import doctest
