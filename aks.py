@@ -170,7 +170,8 @@ def mod_exponentiation_poly(p, exponent, r):
     n = exponent
 
     # Now we will compute modular exponentiation for p
-    while exponent >= 0:
+    # Make sure that we check exponent > 0, otherwise we will get an infinite loop
+    while exponent > 0:
         if exponent % 2 == 1:
             result = multiply_two_polynomials(result, p, n, r)
         p = multiply_two_polynomials(p, p, n, r)
