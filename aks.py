@@ -28,9 +28,12 @@ def main(n):
     # Step 5:
     # For this, we will need to multiply polynomials, so maybe numpy might help for that
     # We will also need to implement a helper function for modular exponentiation of polynomials
-    X = arr.array('l', [],) # This array represents the polynomial X
+    result = arr.array('l', [],) # This array represents the polynomial X
     for a in range(1, floor(sqrt(euler_totient(r)) * log2(n))):
-        pass
+        result = mod_exponentiation_poly(arr.array('l',[a,1]), n, r)
+        # If any of the coefficients in result (in polynomial X from our paper) are non-zero, then we know that n is composite
+        if any(result):
+            return "COMPOSITE"
     # Step 6:
     
 
@@ -175,7 +178,7 @@ def mod_exponentiation_poly(p, exponent, r):
 
     result[(0)] -= p_first
     result[(n % r)] -= 1
-    
+
     return result
 
 if __name__ == '__main__':
