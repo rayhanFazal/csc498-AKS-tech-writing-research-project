@@ -136,7 +136,22 @@ def multiply_two_polynomials(y, z, n, r):
     """
     This function multiplies two polynomials together.
     """
-    pass
+    ar = arr.array('d', [],) # Stores result of multiplication
+
+    # Initialize ar to be an array of 0s with length len(y) + len(z) - 1 for now
+    for i in range(len(y) + len(z) - 1):
+        ar.append(0)
+
+    # Now we will multiply the two polynomials together
+    for i in range(len(y)):
+        for j in range(len(z)):
+            ar[(i + j) % r] += y[i] * z[j]
+            ar[(i + j) % r] %= n
+            
+    # Now we will remove the extra 0s at the end of ar
+    for i in range(r, len(ar)):
+        ar = ar[:-1]
+    return ar
 
 def mod_exponentiation_poly(base, exponent, r):
     """
