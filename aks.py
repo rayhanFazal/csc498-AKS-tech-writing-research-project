@@ -166,6 +166,18 @@ def mod_exponentiation_poly(p, exponent, r):
     result[(0)] = 1
     n = exponent
 
+    # Now we will compute modular exponentiation for p
+    while exponent >= 0:
+        if exponent % 2 == 1:
+            result = multiply_two_polynomials(result, p, n, r)
+        p = multiply_two_polynomials(p, p, n, r)
+        exponent //= 2
+
+    result[(0)] -= p_first
+    result[(n % r)] -= 1
+    
+    return result
+
 if __name__ == '__main__':
     # import doctest
     # doctest.testmod() # For testing purposes (make sure to comment out when submitting)
