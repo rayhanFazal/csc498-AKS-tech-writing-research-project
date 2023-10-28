@@ -132,26 +132,26 @@ def isall_a_coprime_to_n(r, n):
             return 0
     return 1
 
-def multiply_two_polynomials(y, z, n, r):
+def multiply_two_polynomials(p1, p2, n, r):
     """
-    This function multiplies two polynomials together.
+    This function multiplies two polynomials (p1 and p2) together.
     """
-    ar = arr.array('d', [],) # Stores result of multiplication
+    result = arr.array('d', [],) # Stores result of multiplication
 
-    # Initialize ar to be an array of 0s with length len(y) + len(z) - 1 for now
-    for i in range(len(y) + len(z) - 1):
-        ar.append(0)
+    # Initialize ar to be an array of 0s with length len(p1) + len(z) - 1 for now
+    for i in range(len(p1) + len(p2) - 1):
+        result.append(0)
 
     # Now we will multiply the two polynomials together
-    for i in range(len(y)):
-        for j in range(len(z)):
-            ar[(i + j) % r] += y[i] * z[j]
-            ar[(i + j) % r] %= n
-            
-    # Now we will remove the extra 0s at the end of ar
-    for i in range(r, len(ar)):
-        ar = ar[:-1]
-    return ar
+    for i in range(len(p1)):
+        for j in range(len(p2)):
+            result[(i + j) % r] += p1[i] * p2[j]
+            result[(i + j) % r] %= n
+
+    # Now we will remove the extra 0s at the end of result
+    for i in range(r, len(result)):
+        result = result[:-1]
+    return result
 
 def mod_exponentiation_poly(base, exponent, r):
     """
