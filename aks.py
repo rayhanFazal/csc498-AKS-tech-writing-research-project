@@ -153,11 +153,18 @@ def multiply_two_polynomials(p1, p2, n, r):
         result = result[:-1]
     return result
 
-def mod_exponentiation_poly(base, exponent, r):
+def mod_exponentiation_poly(p, exponent, r):
     """
-    This function computes modular exponentiation of polynomials.
+    This function computes modular exponentiation of the polynomial p.
     """
-    pass
+    result = arr.array('d', [],) # Stores result of modular exponentiation
+    p_first = p[0] # Store first element for now since this will be modified later
+
+    # Initialize result to be an array of 0s with length len(p) for now
+    for i in range(len(p)):
+        result.append(0)
+    result[(0)] = 1
+    n = exponent
 
 if __name__ == '__main__':
     # import doctest
