@@ -3,6 +3,7 @@ This is my project implementation for CSC498 at UTM. My project topic is showing
 
 Note: log base 2 is used is used in this implementation.
 
-Usage: TODO
+Usage: python3 aks.py n
+(n must be a positive integer greater than 1)
 
 TODO: Maybe consider making a script that times the runtime of aks on a given number, or a list of numbers. (Can use time command for this)
