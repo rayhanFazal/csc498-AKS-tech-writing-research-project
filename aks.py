@@ -14,14 +14,12 @@ def main(n):
 
     # Step 2:
     r = get_smallest_r(n)
-    print("r is: ", r)
 
     # Step 3:
     if not isall_a_coprime_to_n(r, n):
         return "COMPOSITE"
 
     # Step 4:
-    print("r is: ", r, " and n is: ", n)
     if n <= r:
         return "PRIME"
 
