@@ -142,8 +142,10 @@ def multiply_two_polynomials(p1, p2, n, r):
     This function multiplies two polynomials (p1 and p2) together.
     """
     result = arr.array('d', [],) # Stores result of multiplication
+    # The reason we use 'd' above is to store the coefficients of the polynomial as double-precision floating-point numbers
 
     # Initialize ar to be an array of 0s with length len(p1) + len(z) - 1 for now
+    # The reason that the length of result is len(p1) + len(p2) - 1 is because that is the max possible degree of the product of two polynomials
     for i in range(len(p1) + len(p2) - 1):
         result.append(0)
 
@@ -163,11 +165,17 @@ def mod_exponentiation_poly(p, exponent, r):
     This function computes modular exponentiation of the polynomial p.
     """
     result = arr.array('d', [],) # Stores result of modular exponentiation
-    p_first = p[0] # Store first element for now since this will be modified later
+    # The reason we use 'd' above is to store the coefficients of the polynomial as double-precision floating-point numbers
+
+    p_first = p[0] # Store first coefficient of p
 
     # Initialize result to be an array of 0s with length len(p) for now
+    # The reason that the length of result is len(p) is because the length of the resulting polynomial
+    # will be the same as the original polynomial p
     for i in range(len(p)):
         result.append(0)
+    
+    # Set first coefficient of result to be 1
     result[(0)] = 1
     n = exponent
 
@@ -179,7 +187,9 @@ def mod_exponentiation_poly(p, exponent, r):
         p = multiply_two_polynomials(p, p, n, r)
         exponent //= 2
 
+    # Now we have to adjust the first coefficient of result
     result[(0)] -= p_first
+    # Now adjust coefficient of result at position n % r
     result[(n % r)] -= 1
 
     return result
