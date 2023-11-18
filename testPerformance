@@ -1,0 +1,21 @@
+#!/bin/bash
+# This script runs the aks.py program for each of the 100 inputs and records the runtime in a file called runtimes.tsv
+
+runtime_file="runtimes.tsv"
+if test -f "$runtime_file"
+then
+    rm $runtime_file
+fi
+THREESPACES="   "
+
+for ((i=1; i<=12; i++))
+do
+    # Get execution time of aks.py for input i
+    start=`date +%s`
+    python3 aks.py $i > /dev/null
+    end=`date +%s`
+    runtime=$((end-start))
+
+    # Write input i and runtime to runtimes.tsv
+    echo "$i""$THREESPACES""$runtime">> $runtime_file
+done
