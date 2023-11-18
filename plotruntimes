@@ -10,4 +10,4 @@ set output 'runtimes_graph.png'  # Set the output file name
 set xlabel "Input"  # Add a label for the x-axis
 set ylabel "Execution time (secs)"  # Add a label for the y-axis
 
-plot "runtimes.tsv" using 1:2 title 'AKS execution time' with points pt 7 lc rgb "red"
+plot "runtimes.tsv" using 1:2 title 'AKS execution time' with points pt 7 lc rgb "red", '' using 1:2 with lines lc rgb "blue"
