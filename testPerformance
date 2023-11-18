@@ -12,6 +12,9 @@ INPUT_NUM=100
 for ((i=1; i<=$INPUT_NUM; i++))
 do
     # Get execution time of aks.py for input i
+    # Currently set to seconds, but can be changed to nanoseconds by replacing +%s with +%N in variables start and end
+    # If you want to use nanoseconds, it's best to run this on a lab pc so that there aren't any errors for a number
+    # being too large
     start=`date +%s`
     python3 aks.py $i > /dev/null
     end=`date +%s`
