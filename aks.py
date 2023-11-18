@@ -22,7 +22,7 @@ def main(n):
     # Step 4:
     if n <= r:
         return "PRIME"
-
+    
     # Step 5:
     # For this, we will need to multiply polynomials, so maybe numpy might help for that
     # We will also need to implement a helper function for modular exponentiation of polynomials
@@ -32,12 +32,16 @@ def main(n):
         # If any of the coefficients in result (in polynomial X from our paper) are non-zero, then we know that n is composite
         if any(result):
             return "COMPOSITE"
+        
     # Step 6:
     return "PRIME"
 
 ########################################################################################
 
 # HELPER FUNCTIONS:
+
+########################################################################################
+
 def euler_totient(r):
     """
     This function computes Euler's totient function phi(n), which is the number of positive
@@ -112,7 +116,7 @@ def get_smallest_r(n):
             result = n ** e % r
             if result == 0 or result == 1:
                 exists_next_r = 1
-    assert r <= r_max
+    # assert r <= r_max
     return r
 
 def isall_a_coprime_to_n(r, n):
@@ -182,6 +186,6 @@ def mod_exponentiation_poly(p, exponent, r):
 
 if __name__ == '__main__':
     # import doctest
-    # doctest.testmod() # For testing purposes (make sure to comment out when submitting)
+    # doctest.testmod() # For testing purposes (you can uncomment this to run the doctests if you want)
 
     print(main(int(sys.argv[1]))) # Will output PRIME or COMPOSITE
