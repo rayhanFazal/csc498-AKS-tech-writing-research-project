@@ -1,6 +1,7 @@
 #!/bin/bash
 # This script runs the aks.py program for each of the $INPUT_NUM inputs (from 1 to $INPUT_NUM) 
-# and records the runtime in a file called runtimes.tsv
+# and records the runtime in a file called runtimes.tsv. The format of runtimes.tsv is as follows:
+# Input   Execution time (secs)
 
 runtime_file="runtimes.tsv"
 if test -f "$runtime_file"
