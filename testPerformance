@@ -1,5 +1,5 @@
 #!/bin/bash
-# This script runs the aks.py program for each of the $INPUT_NUM inputs (from 1 to $INPUT_NUM) 
+# This script runs the aks.py program for each of the $INPUT_NUM inputs (from 2 to $INPUT_NUM) 
 # and records the runtime in a file called runtimes.tsv. The format of runtimes.tsv is as follows:
 # Input   Execution time (secs)
 
@@ -10,7 +10,7 @@ then
 fi
 THREESPACES="   "
 INPUT_NUM=100
-for ((i=1; i<=$INPUT_NUM; i++))
+for ((i=2; i<=$INPUT_NUM; i++))
 do
     # Get execution time of aks.py for input i
     # Currently set to seconds, but can be changed to nanoseconds by replacing +%s with +%N in variables start and end
