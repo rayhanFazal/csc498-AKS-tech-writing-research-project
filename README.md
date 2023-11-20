@@ -22,7 +22,7 @@ So to generate the graph, run the following commands in this order:
 
     ./testPerformance
     ./plotruntimes
-(If this gives a permission error, just run the following command below, and then you should be able to run the 2 scripts above):
+(If this gives a permission error, on the DH Lab PC, just run the following command below, and then you should be able to run the 2 scripts above):
 
     chmod u+x testPerformance plotruntimes
 Now, you should be able to view the graph called "runtimes_graph.png".
