@@ -16,7 +16,16 @@ testPerformance runs the aks.py program from 1 to $INPUT_NUM, where $INPUT_NUM i
     Input [3 spaces]  Execution time (secs)
 
 plotruntimes plots the results from runtimes.tsv onto a graph using gnuplot. The x-axis represents the input that we ran on aks.py, and the y-axis represents the execution time for that specific input on aks.py.
-Currently, we plot execution time in seconds on the graph, since nanoseconds can output numbers that are very large and so it might throw an error for some computers. Hence, if you want to see the runtime in nanoseconds, it is best to run these tests on a DH Lab PC. See plotruntimes file for more.
+Currently, we plot execution time in seconds on the graph, since nanoseconds can output numbers that are very large and so it might throw an error for some computers. Hence, if you want to see the runtime in nanoseconds, it is best to run these tests on a DH Lab PC. Also, since plotruntimes uses gnuplot to make the graph, it probably is better to just run all the code here in this whole project on a DH Lab PC, to save you the hassle of having to download gnuplot. See plotruntimes file for more.
+
+So to generate the graph, run the following commands in this order:
+
+    ./testPerformance
+    ./plotruntimes
+(If this gives a permission error, just run the following command below, and then you should be able to run the 2 scripts above):
+
+    chmod u+x testPerformance plotruntimes
+Now, you should be able to view the graph called "runtimes_graph.png".
 
 Also, another way you can test the runtime of aks.py is by using the "time" command. 
 
