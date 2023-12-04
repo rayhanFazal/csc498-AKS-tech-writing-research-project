@@ -1,12 +1,13 @@
 # CSC498_AKS
 This is my project implementation for CSC498 at UTM. My project topic is showing that the AKS Primality Test is in P. So this repository contains my implementation of the AKS algorithm in Python, which is aks.py. If you want to see my report, check out aks_report.pdf.
 
-Note: log base 2 is used is used in this implementation.
+Note: log base 2 is used is used in this implementation. Also, my performance testing code uses gnuplot to create the graph, so to test my entire project implementation, it would be best for you to run my entire code in a DH Lab PC to save you the hassle of having to download gnuplot. See section Performance testing in this README for more.
 
 Usage: 
 
     python3 aks.py n
-(n must be a positive integer greater than 1)
+Input: n, which must be a positive integer greater than 1.
+Output: "PRIME" if n is a prime number, "COMPOSITE" if n is a composite number.
 
 ## Performance testing ##
 To test the runtime of aks.py, there are 2 scripts: testPerformance and plotruntimes.
