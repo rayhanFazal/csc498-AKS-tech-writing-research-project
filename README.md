@@ -7,6 +7,7 @@ Usage:
 
     python3 aks.py n
 Input: n, which must be a positive integer greater than 1.
+
 Output: "PRIME" if n is a prime number, "COMPOSITE" if n is a composite number.
 
 ## Performance testing ##
