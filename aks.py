@@ -197,5 +197,7 @@ def mod_exponentiation_poly(p, exponent, r):
 if __name__ == '__main__':
     # import doctest
     # doctest.testmod() # For testing purposes (you can uncomment this to run the doctests if you want)
-
+    if len(sys.argv) - 1 != 1: # Can only pass in one positive integer n, n > 1
+        print("usage: python3 aks.py n")
+        exit(1)
     print(main(int(sys.argv[1]))) # Will output PRIME or COMPOSITE
