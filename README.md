@@ -1,14 +1,31 @@
 # CSC498_AKS
-This is my project implementation for CSC498 at UTM. My project topic is showing that the AKS Primality Test is in P. So this repository contains my implementation of the AKS algorithm in Python, which is aks.py. If you want to see my report, check out aks_report.pdf.
+This is my research project for CSC498 at UTM. My project topic is showing that the AKS Primality Test is in P. So this repository contains my implementation of the AKS algorithm in Python, which is aks.py. If you want to see my report, check out aks_report.pdf, which further explains in detail everything you need to know about the AKS Primality Test.
 
-Note: log base 2 is used is used in this implementation. Also, my performance testing code uses gnuplot to create the graph, so to test my entire project implementation, it would be best for you to run my entire code in a DH Lab PC to save you the hassle of having to download gnuplot. See section Performance testing in this README for more.
+My job is to learn the AKS Primality Test algorithm, and convert my findings into a format (research paper) that is accessible to computer science students at any level.
 
-Usage: 
+## Goals of this project ##
+1. A computer science student at any level can understand what the AKS Primality Test is, and the reasoning behind its logic
+2. To show that the AKS Primality Test is in P
+
+
+
+
+## Implementation ##
+I implemented this algorithm in Python[^1], and also created some scripts in Bash to test its performance (see section Performance testing below for more).
+
+aks.py also contains documentation I wrote, using Python docstrings.
+
+### Instructions on how to run aks.py ###
+
+Usage (run the command below on the command line): 
 
     python3 aks.py n
 Input: n, which must be a positive integer greater than 1.
 
 Output: "PRIME" if n is a prime number, "COMPOSITE" if n is a composite number.
+
+Example run (I ran this in a Git Bash terminal):
+
 
 ## Performance testing ##
 To test the runtime of aks.py, there are 2 scripts: testPerformance and plotruntimes.
@@ -31,7 +48,9 @@ Now, you should be able to view the graph called "runtimes_graph.png".
 
 Also, another way you can test the runtime of aks.py is by using the "time" command. 
 
-Example (run this in the terminal):
+Example (run this on the command line):
 
     time python3 aks.py 107
+
+[^1]: log base 2 is used is used in this implementation. Also, my performance testing code uses gnuplot to create the graph, so to test my entire project implementation, it would be best for you to run my entire code in a DH Lab PC to save you the hassle of having to download gnuplot. See section Performance testing in this README for more.
 
