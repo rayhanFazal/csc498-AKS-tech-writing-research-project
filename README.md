@@ -18,8 +18,8 @@ aks.py also contains documentation I wrote, using Python docstrings.
 
 1. First, open up a command line like Git Bash, and after cloning the project, make sure you are inside the project directory (in CSC498_AKS). Or, see below commands for how to do this (run these on the command line).
 
-       git clone https://github.com/rayhanFazal/CSC498_AKS.git # cloning repository
-       cd CSC498_AKS/ # navigate to project directory
+       git clone https://github.com/rayhanFazal/csc498-AKS-tech-writing-research-project.git # cloning repository
+       cd csc498-AKS-tech-writing-research-project/ # navigate to project directory
 
 3. Now, you can run aks.py:
 
