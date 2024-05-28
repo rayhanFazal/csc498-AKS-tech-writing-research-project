@@ -1,7 +1,8 @@
 # CSC498 Research Project: AKS Primality Test
 This is my research project for CSC498 at UTM. My project topic is showing that the AKS Primality Test is in P. So this repository contains my implementation of the AKS algorithm in Python, which is aks.py. If you want to see my report, check out aks_report.pdf, which further explains in detail everything you need to know about the AKS Primality Test. It also contains my references for my research.
 
-My job is to learn the AKS Primality Test algorithm, and convert my findings into a format (research paper) that is accessible to computer science students at any level.
+My job is to learn the AKS Primality Test algorithm, and translate my findings into a format (research paper) that is accessible to computer science students at any level. In other words, this research project involves
+me doing technical writing, and serves as one of my writing samples.
 
 ## Goals of this project ##
 1. A computer science student at any level can understand what the AKS Primality Test is, and the reasoning behind its logic
