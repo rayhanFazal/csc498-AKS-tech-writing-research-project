@@ -8,6 +8,9 @@ def main(n):
     helper functions for each of the steps in the algorithm. This function will output
     either PRIME or COMPOSITE.
     """
+    if n < 2:
+        return "NEITHER PRIME NOR COMPOSITE"
+
     # Step 1:
     if is_perfect_power(n):
         return "COMPOSITE"
@@ -200,4 +203,4 @@ if __name__ == '__main__':
     if len(sys.argv) - 1 != 1: # Can only pass in one positive integer n, n > 1
         print("usage: python3 aks.py n")
         exit(1)
-    print(main(int(sys.argv[1]))) # Will output PRIME or COMPOSITE
+    print(main(int(sys.argv[1]))) # Will output "PRIME" or "COMPOSITE" or "NEITHER PRIME NOR COMPOSITE"
