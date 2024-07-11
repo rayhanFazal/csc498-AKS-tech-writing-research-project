@@ -34,7 +34,14 @@ Example run (I ran this in a Git Bash terminal):
 ![Running aks.py on a specific input](aks_example_run.png)
 
 
-## Performance testing ##
+## Testing ##
+
+### Correctness tests ###
+test_hypothesis.py is used to test aks.py for correctness. It uses the Python
+Hypothesis testing framework to do so. It generates small and large prime and
+composite numbers and then runs them against my implementation. You can check out test_hypothesis.py for more on how it does these tests.
+
+### Performance testing ###
 To test the runtime of aks.py, there are 2 scripts: testPerformance and plotruntimes.
 
 testPerformance runs the aks.py program from 1 to $INPUT_NUM, where $INPUT_NUM is how many numbers you want to test aks.py on, and records the runtime in a file called runtimes.tsv (see testPerformance file for more). The format of runtimes.tsv is as follows:
@@ -44,7 +51,7 @@ testPerformance runs the aks.py program from 1 to $INPUT_NUM, where $INPUT_NUM i
 plotruntimes plots the results from runtimes.tsv onto a graph using gnuplot. The x-axis represents the input that we ran on aks.py, and the y-axis represents the execution time for that specific input on aks.py.
 Currently, we plot execution time in seconds on the graph, since nanoseconds can output numbers that are very large and so it might throw an error for some computers. Hence, if you want to see the runtime in nanoseconds, it is best to run these tests on a DH Lab PC. Also, since plotruntimes uses gnuplot to make the graph, it probably is better to just run all the code here in this whole project on a DH Lab PC, to save you the hassle of having to download gnuplot. See plotruntimes file for more.
 
-### How to run the performance tests ###
+#### How to run the performance tests ####
 Run the following two commands below in the order they appear:
 
     ./testPerformance
