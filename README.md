@@ -3,6 +3,7 @@ This is my research project for CSC498 at UTM. My project topic is showing that 
 
 My job is to learn the AKS Primality Test algorithm, and translate my findings into a format (research paper) that is accessible to computer science students at any level. In other words, this research project involves
 me doing technical writing, and serves as one of my writing samples.
+It also includes some testing that I did (see section Testing below) which includes both correctness and performance tests.
 
 ## Goals of this project ##
 1. A computer science student at any level can understand what the AKS Primality Test is, and the reasoning behind its logic
@@ -40,6 +41,11 @@ Example run (I ran this in a Git Bash terminal):
 test_hypothesis.py is used to test aks.py for correctness. It uses the Python
 Hypothesis testing framework to do so. It generates small and large prime and
 composite numbers and then runs them against my implementation. You can check out test_hypothesis.py for more on how it does these tests.
+
+You can run this file as follows:
+
+        python test_hypothesis.py
+(The output will show at the end how many tests have passed)
 
 ### Performance testing ###
 To test the runtime of aks.py, there are 2 scripts: testPerformance and plotruntimes.
